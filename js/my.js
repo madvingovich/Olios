@@ -84,7 +84,7 @@ $(document).ready(function () {
                 var heigth = $(window).height() / 100 * 90;
                 $(".modal-img img").css({"max-height":heigth + "px"});
             }());
-        }
+        };
     };
     //
     function onHashUpdate(e) {

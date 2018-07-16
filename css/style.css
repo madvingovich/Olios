@@ -871,6 +871,18 @@ span.close {
       font-size: 15px;
       color: #c1c1c1;
       font-weight: 300; }
+    .search-input::-moz-placeholder {
+      font-size: 15px;
+      color: #c1c1c1;
+      font-weight: 300; }
+    .search-input:-moz-placeholder {
+      font-size: 15px;
+      color: #c1c1c1;
+      font-weight: 300; }
+    .search-input:-ms-input-placeholder {
+      font-size: 15px;
+      color: #c1c1c1;
+      font-weight: 300; }
     .search-input-clear {
       position: absolute;
       right: 10.7%;
@@ -1023,4 +1035,5 @@ span.border:nth-of-type(4) {
 @media screen and (max-width: 1500px) {
   .category-content {
     padding: 0 15vw; } }
+
 /*# sourceMappingURL=style.css.map */
