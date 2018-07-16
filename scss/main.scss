@@ -519,7 +519,7 @@ a.show-more {
   font-weight: 300;
   align-self: flex-end;
   transition: .3s;
-  transform: translate(-100%);
+  transform: translate(0,-100%);
   & img {
     margin-left: 20px;
   }

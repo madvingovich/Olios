@@ -585,8 +585,8 @@ a.show-more {
       align-self: flex-end;
   -webkit-transition: .3s;
   transition: .3s;
-  -webkit-transform: translate(-100%);
-          transform: translate(-100%); }
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%); }
   .likes img {
     margin-left: 20px; }
 
