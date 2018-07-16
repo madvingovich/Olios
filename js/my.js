@@ -67,6 +67,52 @@ $(document).ready(function () {
         }
     };
     //
+    function setHashOnload() {
+        var content = location.hash.slice(1) + ".php";
+        //
+        $.ajax({
+            url: content,
+            cash: false,
+            success: function (html) {
+                $(".content").html(html);
+            }
+        });
+        //
+        if(location.hash == "#home") $(".home img.active").css({"opacity":"1"});
+        if(location.hash == "#single") {
+            (function modalImgHeight () {  // max-heigth of modal image = 90% from screen heigth
+                var heigth = $(window).height() / 100 * 90;
+                $(".modal-img img").css({"max-height":heigth + "px"});
+            }());
+        }
+    };
+    //
+    function onHashUpdate(e) {
+        if (location.hash == "#home") {
+            $(".home img.active").css({"opacity":"1"});
+        } else {
+            $(".home img.active").css({"opacity":"0"});
+        };
+        //
+        hideAllItemsAnimation();
+        $(".content").css({"opacity":"0"});
+        //
+        var content = location.hash.slice(1) + ".php";
+        setTimeout(function () {
+            $.ajax({
+                url: content,
+                cash: false,
+                success: function (html) {
+                    $(".content").html(html);
+                }
+            });
+            setTimeout(function () {
+                $(".content").css({"opacity":"1"});
+                showAllItemsAnimation();
+            },500);
+        },400);
+    };
+    //
     function showAnimateItem(element) {
         element.css({"transform":"translate(0,0)"});
     };
@@ -117,51 +163,6 @@ $(document).ready(function () {
         hideAnimateToBottom($(".single-content-manage"));
         hideAnimateToBottom($(".recomended-item"));
         $(".burger-menu").css({"transform":"skew(-25deg) translateX(160%)"});
-    };
-    //
-    function setHashOnload() {
-        if(location.hash == "#home") $(".home img.active").css({"opacity":"1"});
-        if(location.hash == "#single") {
-            (function modalImgHeight () {  // max-heigth of modal image = 90% from screen heigth
-                var heigth = $(window).height() / 100 * 90;
-                $(".modal-img img").css({"max-height":heigth + "px"});
-            }());
-        }
-        var content = location.hash.slice(1) + ".php";
-        //
-        $.ajax({
-            url: content,
-            cash: false,
-            success: function (html) {
-                $(".content").html(html);
-            }
-        });
-    };
-    //
-    function onHashUpdate(e) {
-        if (location.hash == "#home") {
-            $(".home img.active").css({"opacity":"1"});
-        } else {
-            $(".home img.active").css({"opacity":"0"});
-        };
-        //
-        hideAllItemsAnimation();
-        $(".content").css({"opacity":"0"});
-        //
-        var content = location.hash.slice(1) + ".php";
-        setTimeout(function () {
-            $.ajax({
-                url: content,
-                cash: false,
-                success: function (html) {
-                    $(".content").html(html);
-                }
-            });
-            setTimeout(function () {
-                $(".content").css({"opacity":"1"});
-                showAllItemsAnimation();
-            },500);
-        },400);
     };
     //
     function logoClick(e) {
