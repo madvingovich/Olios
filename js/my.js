@@ -1,7 +1,6 @@
 $(document).ready(function () {
     //
     setTimeout(function () {
-
         showAllItemsAnimation();
     },200);
     //
@@ -16,9 +15,9 @@ $(document).ready(function () {
             clearSearchInput(e);
             searchBlockOpen(e);
             searchBlockClose(e);
-            // setHashOnClicks(e);
             logoClick(e);
             setLocation(e);
+            basketNotReady(e);
         }
     });
     //
@@ -34,15 +33,12 @@ $(document).ready(function () {
         }
     });
     //
-    //
-    //
     function getCheckVariables() {
         this.menuOpened = 0;
         this.searchOpened = 0;
         this.rotate = 0;
     };
     var variables = new getCheckVariables();
-    //
     //
     function setLocation(e) {
         if(e.target.closest(".home") && !~location.pathname.indexOf("index")) {
@@ -74,6 +70,15 @@ $(document).ready(function () {
                 location = "single.html";
             },500);
         };
+    };
+    //
+    function basketNotReady(e) {
+        if(e.target.closest(".cart")) {
+            $(".basket").css({"transform":"translateX(0)","opacity":"1"});
+            setTimeout(function () {
+                $(".basket").css({"transform":"translateX(-50px)","opacity":"0"});
+            },1000);
+        }
     };
     //
     (function modalImgHeight () {  // max-heigth of modal image = 90% from screen heigth
@@ -308,5 +313,4 @@ $(document).ready(function () {
             $(".search-result-sum").css({"opacity":"0","transform":"translateY(100px)"});
         }
     };
-    //
 });
