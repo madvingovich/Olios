@@ -28,7 +28,11 @@ aside {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-          user-select: none; }
+          user-select: none;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: .5s;
+  transition: .5s; }
   aside .logo img {
     width: 29%;
     margin-top: 33px;
@@ -67,6 +71,9 @@ aside {
   opacity: 0;
   -webkit-transition: .3s;
   transition: .3s; }
+
+li.index img.active {
+  opacity: 1; }
 
 .burger-menu {
   list-style: none;
@@ -124,7 +131,8 @@ aside {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   -webkit-transition: .5s;
-  transition: .5s; }
+  transition: .5s;
+  position: relative; }
 
 .content-header {
   text-align: center;
@@ -373,7 +381,7 @@ a.show-all {
       -webkit-transform: translate(-100%, 0);
               transform: translate(-100%, 0); }
 
-.category {
+.category-logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,7 +397,7 @@ a.show-all {
   transition: .3s;
   -webkit-transform: translate(100%, 0);
           transform: translate(100%, 0); }
-  .category p {
+  .category-logo p {
     margin-right: 40px; }
 
 .products {

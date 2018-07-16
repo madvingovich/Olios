@@ -27,6 +27,8 @@ aside {
   box-shadow: 0 0 25px rgba(219, 219, 219, 0.5);
   z-index: 50;
   user-select: none;
+  transform: translateX(-100%);
+  transition: .5s;
   & .logo img{
     width: 29%;
     margin-top: 33px;
@@ -61,6 +63,9 @@ aside {
 .active {
   opacity: 0;
   transition: .3s;
+}
+li.index img.active {
+  opacity: 1;
 }
 
 .burger-menu {
@@ -114,6 +119,7 @@ aside {
   height: 100vh;
   transform: translateY(0);
   transition: .5s;
+  position: relative;
 }
 .content-header {
   text-align: center;
@@ -168,7 +174,7 @@ a.home-btn {
   overflow: hidden;
   border-right:1px solid $blue;
   border-left:1px solid $blue;
-  //border-top:1px solid #ааа;
+
   font-weight: 300;
   &:before {
     content: "";
@@ -340,7 +346,7 @@ a.show-all {
     }
   }
 }
-.category {
+.category-logo {
   display: flex;
   align-items: center;
   justify-content: flex-end;
