@@ -945,3 +945,31 @@ span.border:nth-of-type(4) {
     padding: 0 15vw;
   }
 }
+@media screen and (max-width: 1400px){
+  body {
+    font-size: 15px;
+  }
+  .burger-menu {
+    height: 50px;
+    width: 50px;
+  }
+  .category-content-header {
+    padding: 1% 0;
+    margin-bottom: 20px;
+  }
+  .products-item-img img {
+    width: 65%;
+  }
+  .single-content-info h2 {
+    margin-bottom: 10px;
+  }
+  .p-info {
+    margin-bottom: 10px;
+  }
+  .right-menu-list {
+    font-size: 15px;
+  }
+  .right-menu-list li img {
+    max-height: 50px;
+  }
+}
