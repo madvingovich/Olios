@@ -18,7 +18,6 @@ $(document).ready(function () {
             searchBlockClose(e);
             setHashOnClicks(e);
             logoClick(e);
-            console.log(e.target)
         }
     });
     //
@@ -161,7 +160,7 @@ $(document).ready(function () {
             setTimeout(function () {
                 $(".content").css({"opacity":"1"});
                 showAllItemsAnimation();
-            },100);
+            },500);
         },400);
     };
     //
